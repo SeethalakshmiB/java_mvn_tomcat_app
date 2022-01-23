@@ -23,5 +23,16 @@ pipeline {
                 sh('docker run --name tomcat_app -dp 3000:8080 tomcat_app')
             }
         }
+
+        stage('Deploy into docker host') {
+            steps {
+                echo "Deploying application into docker host instance"
+                sshagent( credentials: ['docker_host'] ) {
+                    sh '''
+                        docker ps
+                    '''
+                }
+            }
+        }
     }
 }
