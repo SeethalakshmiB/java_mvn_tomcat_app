@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Build Docker Image....'
                 sh('docker ps')
-                sh('docker build -t tomcat_app')
+                sh('docker build -t tomcat_app .')
                 sh('docker run -dp 8081:8080 tomcat_app')
             }
         }
