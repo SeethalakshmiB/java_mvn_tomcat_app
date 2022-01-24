@@ -37,12 +37,3 @@ pipeline {
         // }
     }
 }
-
-// 1. dev --> v1 release push --> jenkins 
-//     a. mvn package 
-//     b. custom image and run the container -- v1
-
-// 2. dev_1 --> v2 
-//     a. mvn package
-//     b. custom image --> remove previous container (v1) --> run new container (v2)
-
