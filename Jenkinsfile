@@ -24,6 +24,12 @@ pipeline {
             }
         }
 
+        stage('Deploy httpd server in same host using Ansible') {
+            steps{
+                ansible-playbook playbook.yaml
+            }
+        }
+
         // stage('Ansible Playbook') {
         //     steps{
         //         sh'''
