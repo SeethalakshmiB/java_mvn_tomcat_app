@@ -19,6 +19,7 @@
    - name: dependencies for docker
      pip:
            name: docker-py
+           extra_args: --user
 
    - name: pull an image
      docker_image:
