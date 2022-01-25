@@ -22,7 +22,7 @@
            state: started
            image: "httpd"
            ports:
-              - "60:80"
+              - "80:80"
 
 - name: web-server configure using docker deploy in docker host
   hosts: webserver # dockerserver
@@ -49,4 +49,4 @@
            state: started
            image: "httpd"
            ports:
-              - "60:80"
+              - "80:80"
