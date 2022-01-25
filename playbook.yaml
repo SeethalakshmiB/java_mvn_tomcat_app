@@ -16,9 +16,9 @@
      service:
            name: docker
            state: started
-   - name: dependencies for docker
-     pip:
-           name: docker-py
+  #  - name: dependencies for docker
+  #    pip:
+  #          name: docker-py
 
    - name: pull an image
      docker_image:
