@@ -29,6 +29,11 @@ pipeline {
                 sh('ansible-playbook playbook.yaml')
             }
         }
+        stage('Deploy httpd server in docker host using Ansible'){
+            steps{
+                ansiblePlaybook credentialsId: 'docker-host', installation: 'ansible', inventory: 'host.ini', playbook: 'playbook.yaml'
+            }
+        }
 
         // stage('Ansible Playbook') {
         //     steps{
