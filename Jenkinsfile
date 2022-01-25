@@ -6,8 +6,11 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh('whoami')
-                sh('mvn clean')
-                sh('mvn package')
+                sh '''
+                    export M2_HOME=/opt/apache-maven
+                    export PATH=${M2_HOME}/bin:${PATH}
+                    mvn clean package
+                '''
             }
         }
         stage('Testing Application') {
