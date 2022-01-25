@@ -24,6 +24,14 @@ pipeline {
             }
         }
 
+        stage('Ansible Playbook') {
+            steps{
+                sh'''
+                echo "Ansible Stage"
+                '''
+            }
+        }
+
         // stage('Deploy into docker host') {
         //     steps {
         //     //     echo "Deploying application into docker host instance"
