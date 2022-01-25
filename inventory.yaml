@@ -1,6 +1,0 @@
----
-# local play
-all:
-  hosts:
-    54.236.33.168:
-       ansible_connection: ssh # ssh for remote
