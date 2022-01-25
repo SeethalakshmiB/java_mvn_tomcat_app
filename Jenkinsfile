@@ -5,6 +5,7 @@ pipeline {
         stage('Build Maven Project') {
             steps {
                 echo 'Building..'
+                sh('whoami')
                 sh('mvn clean')
                 sh('mvn package')
             }
