@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Maven Project') {
             steps {
-                echo 'Building..'
+                echo 'Maven Build Processing..'
                 sh('/opt/apache-maven-3.8.4/bin/mvn clean')
                 sh('/opt/apache-maven-3.8.4/bin/mvn package')
             }

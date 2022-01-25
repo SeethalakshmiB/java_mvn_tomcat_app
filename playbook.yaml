@@ -1,32 +1,5 @@
-# - name: web-server configure using docker
-#   hosts: localhost
-#   gather_facts: no
-#   tasks:
-#    - name: Start service docker, if not started
-#      service:
-#            name: docker
-#            state: started
-#    - name: dependencies for docker
-#      pip:
-#            name: docker-py
-#            extra_args: --user
-
-#    - name: pull an image
-#      docker_image:
-#            name: "httpd"
-#            source: pull
-       
-#    - name: Container present
-#      docker_container:
-#            name: web-server
-#            state: started
-#            image: "httpd"
-#            ports:
-#               - "60:80"
-
-- name: web-server configure using docker deploy in docker host
-  hosts: webserver
-  become: True
+- name: web-server configure using docker
+  hosts: localhost
   gather_facts: no
   tasks:
    - name: Start service docker, if not started
@@ -50,3 +23,30 @@
            image: "httpd"
            ports:
               - "60:80"
+
+# - name: web-server configure using docker deploy in docker host
+#   hosts: webserver
+#   become: True
+#   gather_facts: no
+#   tasks:
+#    - name: Start service docker, if not started
+#      service:
+#            name: docker
+#            state: started
+#    - name: dependencies for docker
+#      pip:
+#            name: docker-py
+#            extra_args: --user
+
+#    - name: pull an image
+#      docker_image:
+#            name: "httpd"
+#            source: pull
+       
+#    - name: Container present
+#      docker_container:
+#            name: web-server
+#            state: started
+#            image: "httpd"
+#            ports:
+#               - "60:80"
