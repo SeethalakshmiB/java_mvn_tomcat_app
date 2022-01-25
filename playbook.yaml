@@ -1,5 +1,7 @@
 - name: web-server configure using docker
   hosts: localhost
+  become: True
+  become_method: sudo
   gather_facts: no
   tasks:
   #  - name: yum_repository for docker
@@ -16,9 +18,9 @@
      service:
            name: docker
            state: started
-  #  - name: dependencies for docker
-  #    pip:
-  #          name: docker-py
+   - name: dependencies for docker
+     pip:
+           name: docker-py
 
    - name: pull an image
      docker_image:
