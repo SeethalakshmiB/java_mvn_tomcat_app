@@ -28,6 +28,7 @@ pipeline {
             steps{
                 sh'''
                 echo "Ansible Stage"
+                ansible-playbook playbook.yaml
                 '''
             }
         }
