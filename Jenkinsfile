@@ -5,8 +5,8 @@ pipeline {
         stage('Build Maven Project') {
             steps {
                 echo 'Building..'
-                sh('/opt/apache-maven-3.6.3/bin/mvn clean')
-                sh('/opt/apache-maven-3.6.3/bin/mvn package')
+                sh('mvn clean')
+                sh('mvn package')
             }
         }
         stage('Testing Application') {
