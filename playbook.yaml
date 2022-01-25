@@ -1,7 +1,5 @@
 - name: web-server configure using docker
   hosts: localhost
-  become: True
-  become_method: sudo
   gather_facts: no
   tasks:
   #  - name: yum_repository for docker
